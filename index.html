@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050b1f" />
+    <meta
+      name="description"
+      content="Omar Dev. — مطوّر ومبدع رقمي. الأفكار تتحول إلى واقع من خلال البرمجة."
+    />
+    <title>Omar Dev. | مطوّر ومبدع رقمي</title>
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Orbitron:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply the saved language before first paint (prevents an RTL/LTR flash). -->
+    <script>
+      try {
+        if (localStorage.getItem('omar-dev-lang') === 'en') {
+          document.documentElement.lang = 'en';
+          document.documentElement.dir = 'ltr';
+        }
+      } catch (e) {
+        /* storage unavailable: keep the Arabic default */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <noscript>
+      <div style="max-width: 36rem; margin: 3rem auto; padding: 1rem; font-family: system-ui, sans-serif; color: #e8eefc; line-height: 1.7">
+        <h1 dir="ltr">Omar Dev.</h1>
+        <p>هذا الموقع يحتاج JavaScript ليعمل. / This site needs JavaScript to run.</p>
+        <p>
+          <a style="color: #22e4ff" href="https://wa.me/201070869799">WhatsApp</a> ·
+          <a style="color: #22e4ff" href="mailto:omarmahmoudgames2025@gmail.com">omarmahmoudgames2025@gmail.com</a>
+        </p>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
