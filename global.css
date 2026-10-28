@@ -1,0 +1,199 @@
+/* Design tokens — palette from the brief: deep navy, electric blue, cyan, controlled purple. */
+:root {
+  --bg-deep: #050b1f;
+  --bg-raised: #0b1630;
+  --electric-blue: #2f6bff;
+  --cyan: #22e4ff;
+  --purple: #8b5cf6;
+  --text: #e8eefc;
+  --text-muted: #a9b8dc;
+  --border: rgba(120, 160, 255, 0.22);
+
+  --font-display: 'Orbitron', 'Cairo', system-ui, sans-serif;
+  --font-body: 'Cairo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--bg-deep);
+  background-image:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(47, 107, 255, 0.22), transparent 70%),
+    radial-gradient(50rem 36rem at 5% 110%, rgba(139, 92, 246, 0.16), transparent 70%);
+  background-repeat: no-repeat;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+/* Layout uses logical properties so Arabic (RTL) and English (LTR) both work. */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-inline: 1rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end; /* "end" side of the page: it flips automatically with RTL/LTR */
+  padding-block: 1rem;
+}
+
+.hero {
+  flex: 1;
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
+  padding-block: 2rem 3rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--cyan);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.brand {
+  margin: 0.25rem 0 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 9vw, 4rem);
+  line-height: 1.15;
+  background: linear-gradient(90deg, var(--cyan), var(--electric-blue) 60%, var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  margin: 0 0 2rem;
+  color: var(--text-muted);
+  font-size: 1.1875rem;
+}
+
+.status,
+.contact {
+  margin-block: 1.5rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--bg-raised);
+}
+
+.status h2,
+.contact h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.status p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block: 1rem 0.75rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem; /* comfortable touch target */
+  min-width: 10rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button-primary {
+  background: var(--electric-blue);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background: #4a80ff;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.button-secondary:hover {
+  background: rgba(34, 228, 255, 0.1);
+}
+
+.contact-address {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.lang-switch {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0.25rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-raised);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-switch:hover {
+  border-color: var(--cyan);
+}
+
+.footer {
+  padding-block: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
